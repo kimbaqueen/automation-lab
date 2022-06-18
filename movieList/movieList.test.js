@@ -24,12 +24,18 @@ test('add movie test', async () => {
 
 test('delete movie test', async () => {
     await driver.findElement(By.xpath("//button[@id='titanic']")).click();
-    const titanicMovie = await driver.findElement(By.xpath('//span[text()="titanic"]'));
+    const titanicMovie = await driver.findElement(By.xpath("//span[text()='titanic']"));
 
     const isDisplayed = await titanicMovie.isDisplayed();
     await driver.sleep(5000);
 
     expect(isDisplayed).toBeFalsy();
+});
+
+test('change message test', async () => {
+    await driver.findElement(By.xpath("//span[@class='checked']"));
+
+    // return `${movieName} checked off list!!`
 });
 
 
